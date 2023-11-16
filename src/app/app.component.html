@@ -1,0 +1,19 @@
+<nav>
+  <div class="nav-wrapper">
+    <div class="nav-sides">
+      <img src="../assets/logo.png" class="logo" height="50px">
+      <h1 class="nav-text-logo">WeatherApp</h1>
+    </div>
+    <div class="nav-sides">
+      <button class="button-nav" (click)="goToPage('Home')">Home</button>
+      <button class="button-nav" (click)="goToPage('Weather')">Location</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="display">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

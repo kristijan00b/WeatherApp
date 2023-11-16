@@ -1,0 +1,51 @@
+<div class="content">
+  <h2 class="h-title">Some of the biggest cities</h2>
+  <p class="p-subtitle">Choose a card and read more about that city.</p>
+  <div class="toggle-button">
+    <button (click)="toggleMetrics()" class="button-nav">Toggle Metrics</button>
+  </div>
+  <div *ngIf="weatherData" class="row">
+    <div class="card-group">
+      <div *ngFor="let data of weatherData" class="card">
+        <a href="https://sh.wikipedia.org/wiki/{{data.name}}" target="_blank">
+        <div class="card-info">
+          <h2 class="h-title-city">{{data.name}} <span class="h-title-city-span"> ({{data.sys.country}})</span></h2>          
+          <h2 class="h-title-city-temp">{{getTemperature(data.main.temp,tempUnit)}} {{tempUnit}} </h2>
+          <br>
+          <div class="city-info">
+            <img src="../../assets/temp.png" height="20px">
+            <p class="text-info">{{getTemperature(data.main.temp_max,tempUnit)}} {{tempUnit}}</p>
+          </div>
+          <div class="city-info">
+            <img src="../../assets/mintemp.png" height="20px">
+            <p class="text-info">{{getTemperature(data.main.temp_min,tempUnit)}} {{tempUnit}}</p>
+          </div>
+          <div class="city-info">
+            <img src="../../assets/humidity.png" height="20px">
+            <p class="text-info">{{data.main.humidity}}%</p>
+          </div>
+          <div class="city-info">
+            <img src="../../assets/cloudy.png" height="20px">
+            <p class="text-info">{{data.weather[0].description}}</p>
+          </div>
+          <div class="city-info">
+            <img src="../../assets/wind.png" height="20px">
+            <p class="text-info">{{getWindSpeed(data,windUnit)}} {{windUnit}}</p>
+          </div>
+        </div>
+
+        <img class="back-img" src="../../assets/rain.jpg" alt="" *ngIf="data.weather[0].main == 'Thunderstorm' || data.weather[0].main =='Rain' || data.weather[0].main == 'Drizzle'" >
+        <img class="back-img" src="../../assets/snow.jpg" alt="" *ngIf=" data.weather[0].main =='Snow' || data.weather[0].main =='Sleet'">
+        <img class="back-img" src="../../assets/mist.jpg" alt="" *ngIf="data.weather[0].main =='Mist' || data.weather[0].main =='Fog' || data.weather[0].main =='Smoke' || data.weather[0].main =='Haze' || data.weather[0].main =='Dust' || data.weather[0].main =='Sand' || data.weather[0].main =='Ash' || data.weather[0].main =='Squall' || data.weather[0].main =='Tornado'">
+        <img class="back-img" src="../../assets/clouds.jpg" alt="" *ngIf=" data.weather[0].main =='Clouds'">
+        <img class="back-img" src="../../assets/clear.jpg" alt="" *ngIf="data.weather[0].main =='Clear' ">
+      </a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-section">
+    <div class="ty-content">
+      <p>Thanks for visit!</p>
+    </div>
+  </div>
+</div>

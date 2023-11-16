@@ -1,0 +1,128 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #8ecae6;
+}
+.button-nav{
+    border: 0;
+    background-color: #ffb703;
+    color: #023047;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #023047;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px -10px #023047;
+}
+.button-nav:hover{
+    background-color: #fb8500;
+}
+.card-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.card-group-weather {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.card{
+    margin-top: 20px;
+ background-color: white;
+ border-radius: 10px;
+ box-shadow: 0px 0px 20px -10px #023047;
+ width: 300px;
+ height: 300px;
+ opacity: 0;
+ animation: fadeIn 0.5s ease-in forwards; 
+}
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Početna vrednost */
+    }
+    to {
+      opacity: 1; /* Konačna vrednost */
+    }
+  }
+.content .h-title{
+    padding-top: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 48px;
+}
+.p-subtitle{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+.city-info{
+    display: flex;
+    align-items: center;
+    margin: 5px 0px 0px 0px ;
+    width: 150px;
+}
+.text-info{
+    margin: 0px 0px 0px 20px ;
+}
+.h-title-city{
+    margin: 10px 0 ;
+    color: #023047;
+}
+.h-title-city-span{
+    font-weight: 400;
+    font-size: 20px;
+}
+.h-title-city-temp{
+    margin: 10px 0 ;
+    color: #023047;
+    font-size: 30px;
+}
+.back-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.card-info{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px 0 10px 0;
+    padding: 10px 20px 10px 10px;
+}
+.foot-section{
+    margin-top: 50px;
+    background-color: #023047;
+    display: flex;
+    justify-content: center;
+    padding: 5px 0px;
+    border-radius: 10px 10px 0px 0px;
+}
+.ty-content{
+    color: white;
+    font-size: 20px;
+}
+@media screen and (max-width: 667px){
+    
+    .card-group {
+        justify-content: center;
+    }
+    .content .h-title{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .toggle-button{
+        display: flex;
+        justify-content: center;
+    }
+}
+.card:hover{
+    margin-top: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.card a{
+    text-decoration: none;
+    color:black;
+}
